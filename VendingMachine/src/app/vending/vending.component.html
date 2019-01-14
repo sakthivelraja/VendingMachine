@@ -1,0 +1,92 @@
+<div class="col-md-12">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title" style="text-align:center; font-weight:bold">Vending Machine</h3>
+            </div>
+            <div class="panel-body">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" style="font-weight:bold">Select Product</h3>
+                    </div>
+                    <div class="panel-body">
+                        <fieldset id="productSelection">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <input type="radio" name="productSelection" value = "Cola" [(ngModel)]="selectedItem"/> &nbsp; <label class="form-group">Cola ($1)</label>
+                                </div>
+                                <div class="col-md-4" style="text-align:center">
+                                    <input type="radio" name="productSelection" value="Chips" [(ngModel)]="selectedItem"/> &nbsp; <label class="form-group">Chips ($0.50)</label>
+                                </div>
+                                <div class="col-md-4" style="text-align:right">
+                                    <input type="radio" name="productSelection" value="Candy" [(ngModel)]="selectedItem"/> &nbsp; <label class="form-group">Candy ($0.65)</label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" style="font-weight:bold">Insert Coins</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <input type="submit" value="Nickel" class="btn btn-warning btn-block" (click)="nickelClick()">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="submit" value="Dime" class="btn btn-primary btn-block" (click)="dimeClick()">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="submit" value="Quarter" class="btn btn-success btn-block" (click)="quarterClick()">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title" style="font-weight:bold">Available Amount</h3>
+                            </div>
+                            <div class="panel-body" >
+                                <h3><span class="label label-success">${{currencyVal.AvailableAmount/100}}</span></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title" style="font-weight:bold">Remaining Change</h3>
+                            </div>
+                            <div class="panel-body">
+                                <h3><span class="label label-primary">${{vendingResp.Change}}</span></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" style="font-weight:bold">Status</h3>
+                    </div>
+                    <div class="panel-body">
+                        <h3>{{vendingResp.Message}}</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <input type="submit" value="Cancel" class="btn btn-danger btn-block" (click)="cancelTransaction()"  style="float:left" />
+                        </div>
+                        <div class="col-md-6" >
+                            <input type="submit" value="Buy Item" class="btn btn-success btn-block" (click)="buyItem()" style="float:right"/>
+                        </div>                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<br />
